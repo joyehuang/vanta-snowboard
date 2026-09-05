@@ -1,6 +1,6 @@
 # VANTA — Beyond the Line
 
-A concept snowboard landing page built with React, TypeScript, Three.js and GSAP on Vinext.
+A concept snowboard landing page built with Next.js App Router, React, TypeScript, Three.js and GSAP.
 
 ## Development
 
@@ -8,6 +8,15 @@ A concept snowboard landing page built with React, TypeScript, Three.js and GSAP
 npm install
 npm run dev
 ```
+
+Use Node.js 24.x. For a production server, run `npm run build` followed by
+`npm start`.
+
+## Vercel deployment
+
+Import this repository with the root directory set to `.`. The checked-in
+`vercel.json` selects Next.js, runs `npm run build`, and uses `.next` as the
+output directory. No Cloudflare bindings or Vite runtime are required.
 
 ## Validation
 
