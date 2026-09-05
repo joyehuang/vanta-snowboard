@@ -13,7 +13,7 @@ npm run dev
 
 ```sh
 npx tsc --noEmit
-node --test app/board-geometry.test.mjs
+node --test app/board-geometry.test.mjs app/gear-model.test.mjs
 npm run build
 ```
 
@@ -22,3 +22,5 @@ The snowboard is a procedural Three.js mesh with a curved nose/tail, metallic ed
 This is a concept collection, not a live store. Size selection configures the product preview; no checkout or payment is connected.
 
 Mountain photography: Alessio Soggetti, Unsplash, “Icy mountain during night time”. https://unsplash.com/photos/icy-mountain-during-night-time-yhlX_ojH-Cs
+
+Primary topsheet and secondary graphics colors can be selected independently or from a preset; custom colors automatically receive contrasting branding. Matching AURA goggles reuse the primary color for the frame and secondary color for strap/trim, with independent mirror-lens colors. The sticky preview can show the board, full kit, or rotatable goggle close-up. Accessories are concept styling, not certified eyewear or a purchasable bundle.
