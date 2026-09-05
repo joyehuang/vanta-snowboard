@@ -5,6 +5,7 @@ import { ArrowUpRight, ArrowDown, RotateCcw, MoveUpRight, Plus, Minus, Mountain,
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import dynamic from 'next/dynamic';
+import CustomColor from './custom-color';
 import { Switch } from '@/components/ui/switch';
 import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group';
 import type { BoardShape, BoardFinish, BoardView } from './board-geometry';
@@ -15,7 +16,7 @@ const schemes=[{name:'Alpine Acid',primary:'#161b1d',accent:'#dbf66c'},{name:'Gl
 const lensOptions=[{name:'Silver',value:'#c6d7d4'},{name:'Ice Blue',value:'#5aaef0'},{name:'Sunset',value:'#ea9654'}];
 function colorName(hex:string){return palette.find(c=>c.value===hex)?.name||hex.toUpperCase();}
 function ColorPicker({label,value,onChange}:{label:string;value:string;onChange:(value:string)=>void}){
- return <div className="color-picker"><div className="color-picker-label"><span>{label}</span><span>{colorName(value)}</span></div><div className="color-picker-controls"><ToggleGroup className="color-palette" value={[value]} onValueChange={v=>{if(v.length)onChange(v[0])}} aria-label={label}>{palette.map(c=><ToggleGroupItem value={c.value} key={c.value} aria-label={`${label}: ${c.name}`} title={c.name} style={{'--swatch':c.value} as React.CSSProperties}><span/></ToggleGroupItem>)}</ToggleGroup><label className="custom-color" title={`Choose a custom ${label.toLowerCase()}`}><input type="color" value={value} onChange={e=>onChange(e.target.value)} aria-label={`Custom ${label.toLowerCase()}`}/><span>Custom ↗</span></label></div></div>;
+ return <div className="color-picker"><div className="color-picker-label"><span>{label}</span><span>{colorName(value)}</span></div><div className="color-picker-controls"><ToggleGroup className="color-palette" value={[value]} onValueChange={v=>{if(v.length)onChange(v[0])}} aria-label={label}>{palette.map(c=><ToggleGroupItem value={c.value} key={c.value} aria-label={`${label}: ${c.name}`} title={c.name} style={{'--swatch':c.value} as React.CSSProperties}><span/></ToggleGroupItem>)}</ToggleGroup><CustomColor value={value} label={label} onChange={onChange}/></div></div>;
 }
 
 
